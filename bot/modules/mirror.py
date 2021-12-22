@@ -244,7 +244,7 @@ class MirrorListener(listeners.MirrorListeners):
                 update_all_messages()
             return
         with download_dict_lock:
-            msg = f'<b>>☞ 📂 File Name :</b><code>{download_dict[self.uid].name()}</code>\n<b>>☞ 📦 Total Size : </b><code>{size}</code>'
+            msg = f'<b>☞ 📂 File Name :</b><code>{download_dict[self.uid].name()}</code>\n<b>☞ 📦 Total Size : </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
                 msg += '\n<b>Type: </b><code>Folder</code>'
                 msg += f'\n<b>SubFolders: </b><code>{folders}</code>'
@@ -275,11 +275,11 @@ class MirrorListener(listeners.MirrorListeners):
                         buttons.buildbutton("⚡ Index Link ⚡", siurl)
                         if VIEW_LINK:
                             siurls = short_url(share_urls)
-                            buttons.buildbutton("🌐 View Link", siurls)
+                            buttons.buildbutton("🌐 View Link 🌐", siurls)
                     else:
                         buttons.buildbutton("⚡ Index Link ⚡", share_url)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌐 View Link", share_urls)
+                            buttons.buildbutton("🌐 View Link 🌐", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
