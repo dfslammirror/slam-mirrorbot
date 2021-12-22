@@ -35,6 +35,7 @@ pip3 install -r requirements-cli.txt
 - Finally, run the script to generate **token.pickle** file for Google Drive:
 ```
 pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
+python -m pip install google-auth-oauthlib
 python3 generate_drive_token.py
 ```
 
