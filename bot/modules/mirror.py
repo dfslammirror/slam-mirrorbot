@@ -192,7 +192,7 @@ class MirrorListener(listeners.MirrorListeners):
             uname = f"@{self.message.from_user.username}"
         else:
             uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
-        msg = f"{uname} your download has been stopped due to: {error}"
+        msg = f"{uname} 𝙔𝙊𝙐𝙍 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 𝙃𝘼𝙎 𝘽𝙀𝙀𝙉 𝙎𝙏𝙊𝙋𝙋𝙀𝘿 𝘿𝙐𝙀 𝙏𝙊: {error}"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
@@ -244,13 +244,13 @@ class MirrorListener(listeners.MirrorListeners):
                 update_all_messages()
             return
         with download_dict_lock:
-            msg = f'<b>>☞ 📂 File Name :</b><code>{download_dict[self.uid].name()}</code>\n<b>>☞ 📦 Total Size : </b><code>{size}</code>'
+            msg = f'<b>☞ 📂 File Name :</b><code>{download_dict[self.uid].name()}</code>\n<b>☞ 📦 Total Size : </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
-                msg += '\n<b>Type: </b><code>Folder</code>'
-                msg += f'\n<b>SubFolders: </b><code>{folders}</code>'
-                msg += f'\n<b>Files: </b><code>{files}</code>'
+                msg += '\n<b>☞ Type: </b><code>Folder</code>'
+                msg += f'\n<b>☞ SubFolders: </b><code>{folders}</code>'
+                msg += f'\n<b>☞ Files: </b><code>{files}</code>'
             else:
-                msg += f'\n<b>Type: </b><code>{typ}</code>'
+                msg += f'\n<b>☞ Type: </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 surl = short_url(link)
@@ -275,11 +275,11 @@ class MirrorListener(listeners.MirrorListeners):
                         buttons.buildbutton("⚡ Index Link ⚡", siurl)
                         if VIEW_LINK:
                             siurls = short_url(share_urls)
-                            buttons.buildbutton("🌐 View Link", siurls)
+                            buttons.buildbutton("🌐 View Link 🌐", siurls)
                     else:
                         buttons.buildbutton("⚡ Index Link ⚡", share_url)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌐 View Link", share_urls)
+                            buttons.buildbutton("🌐 View Link 🌐", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
